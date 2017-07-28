@@ -19,7 +19,7 @@
         <style>
             body{
                 word-break:break-all;
-                font-family:sans-serif;
+                font-family:"DengXian",sans-serif;
             }
             .is-fluid{
                 padding: 0px 20px;
@@ -114,85 +114,44 @@
                         <table class='table'>
                             <thead>
                                 <tr>
-                                    <th>
+                                    <th style="min-width:120px">
                                         故事
                                     </th>
-                                    <th>章節</th>
-                                    <th>上一章節</th>
-                                    <th>作者</th>
-                                    <th>日期</th>
+                                    <th>上一章節 > 章節</th>
+                                    <th style="min-width:80px">作者</th>
+                                    <th class="is-hidden-mobile">日期</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>世界的奇點</td>
+                                    <td>世界的奇點<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
                                     <td>實驗室</td>
-                                    <td>--</td>
                                     <td>筆現實</td>
-                                    <td>2017-07-15</td>
+                                    <td class="is-hidden-mobile">2017-07-15</td>
                                 </tr>
                                  <tr>
-                                    <td>世界的奇點</td>
-                                    <td>或者沒市場</td>
-                                    <td>實驗室</td>
+                                    <td>世界的奇點<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
+                                    <td><span>實驗室之沒有緊急制 > </span>或者沒市場</td>
                                     <td>筆現實</td>
-                                    <td>2017-07-16</td>
+                                    <td class="is-hidden-mobile">2017-07-16</td>
                                 </tr>
                                 <tr>
-                                    <td>世界的奇點</td>
+                                    <td>世界的奇點<span  class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
                                     <td>或者沒市場</td>
-                                    <td>實驗室</td>
                                     <td>筆現實</td>
-                                    <td>2017-07-16</td>
+                                    <td class="is-hidden-mobile">2017-07-16</td>
                                 </tr>
                                 <tr>
-                                    <td>世界的奇點</td>
+                                    <td>世界的奇點<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
                                     <td>或者沒市場</td>
-                                    <td>實驗室</td>
                                     <td>筆現實</td>
-                                    <td>2017-07-16</td>
+                                    <td class="is-hidden-mobile">2017-07-16</td>
                                 </tr>
                                 <tr>
-                                    <td>世界的奇點</td>
+                                    <td>世界的奇點<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
                                     <td>或者沒市場</td>
-                                    <td>實驗室</td>
                                     <td>筆現實</td>
-                                    <td>2017-07-16</td>
-                                </tr>
-                                <tr>
-                                    <td>世界的奇點</td>
-                                    <td>或者沒市場</td>
-                                    <td>實驗室</td>
-                                    <td>筆現實</td>
-                                    <td>2017-07-16</td>
-                                </tr>
-                                <tr>
-                                    <td>世界的奇點</td>
-                                    <td>或者沒市場</td>
-                                    <td>實驗室</td>
-                                    <td>筆現實</td>
-                                    <td>2017-07-16</td>
-                                </tr>
-                                <tr>
-                                    <td>世界的奇點</td>
-                                    <td>或者沒市場</td>
-                                    <td>實驗室</td>
-                                    <td>筆現實</td>
-                                    <td>2017-07-16</td>
-                                </tr>
-                                <tr>
-                                    <td>世界的奇點</td>
-                                    <td>或者沒市場</td>
-                                    <td>實驗室</td>
-                                    <td>筆現實</td>
-                                    <td>2017-07-16</td>
-                                </tr>
-                                <tr>
-                                    <td>世界的奇點</td>
-                                    <td>或者沒市場</td>
-                                    <td>實驗室</td>
-                                    <td>筆現實</td>
-                                    <td>2017-07-16</td>
+                                    <td class="is-hidden-mobile">2017-07-16</td>
                                 </tr>
 
                             </tbody>

@@ -99,7 +99,7 @@
                   </div>
               </div>
             </b-nav>
-            <nav class="breadcrumb has-arrow-separator" style='overflow:hidden'>
+            <nav class="breadcrumb has-arrow-separator is-hidden-mobile" style='overflow:hidden' >
                 <ul>
                   <li><a>世界的奇點</a></li>
                   <li><a>...</a></li>
