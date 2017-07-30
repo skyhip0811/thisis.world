@@ -105,21 +105,21 @@
                         <div class='column is-5'>
                             <div class="field">
                             <b-field label="筆名">
-    <b-input value="Kevin Garvey" maxlength="30"></b-input>
-</b-field>
+                                <b-input value="Kevin Garvey" maxlength="30"></b-input>
+                            </b-field>
 
-<b-field label="電郵 - 請填寫真實電郵，因為只有這樣將來我們有錢分時才有辦法找到你">
-    <b-input type="email"
-        value="john@"
-        maxlength="30">
-    </b-input>
-</b-field>
-<b-field label="密碼">
-    <b-input type="password"
-        value="iwantmytreasure"
-        password-reveal>
-    </b-input>
-</b-field>
+                            <b-field label="電郵">
+                                <b-input type="email"
+                                    value="john@"
+                                    maxlength="30">
+                                </b-input>
+                            </b-field>
+                            <b-field label="密碼">
+                                <b-input type="password"
+                                    value="iwantmytreasure"
+                                    password-reveal>
+                                </b-input>
+                            </b-field>
                                 
 <div class="block">
     <b-checkbox>我同意連結中的<a>這堆條文</a></b-checkbox>
@@ -162,7 +162,6 @@
             },
             methods:{
               toggle_navbar:function(){
-                  console.log("asds");
                   this.navbarActive = !this.navbarActive;
               }  
             }

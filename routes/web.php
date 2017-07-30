@@ -27,6 +27,6 @@ Route::get('/static/register', function () {
     return view('static/register');
 });
 
-Route::get('/', function () {
-    return view('static/home');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');

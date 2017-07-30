@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017年7月28日, 下午09:49:38
+    Author     : QUOCK
+*/
+
+            body{
+                word-break:break-all;
+                font-family:"DengXian",sans-serif;
+            }
+            .is-fluid{
+                padding: 0px 20px;
+            }
+            .next-stop-section{
+                text-align: center;
+            }
+            .answer{
+                overflow: auto;
+                height: 100px;
+                color:white;
+                background-color: #3CB5B5;
+                
+                
+            }
+            p{
+                white-space: normal;
+            }
+            .add-newline-button{
+                height: 50px;
+                background-color: #428bca;
+                color: white;
+                
+            }
+            .add-newline-button:hover{
+                background-color: #00b3ee;
+                color:white;
+            }
+            .add-newline-button a{
+                color: white;
+            }
+            .answer-author-row{
+                padding:5px;
+            }

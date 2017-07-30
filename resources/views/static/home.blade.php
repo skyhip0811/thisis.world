@@ -156,6 +156,45 @@
 
                             </tbody>
                         </table>
+                    <nav class="pagination is-small">
+  <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
+  <a class="pagination-next">Next page</a>
+  <ul class="pagination-list ">
+    <li>
+      <a class="pagination-link  ">1</a>
+    </li>
+    <li>
+      <a class="pagination-link  is-hidden-mobile">2</a>
+    </li>
+    <li>
+      <a class="pagination-link  is-hidden-mobile">3</a>
+    </li>
+    <li>
+      <a class="pagination-link  is-hidden-mobile">4</a>
+    </li>
+    <li>
+      <a class="pagination-link  is-hidden-mobile">5</a>
+    </li>
+    <li><span class="pagination-ellipsis is-hidden-desktop">&hellip;</span></li>
+    <li>
+      <a class="pagination-link is-hidden-mobile">6</a>
+    </li>
+    <li>
+      <a class="pagination-link is-current">7</a>
+    </li>
+    <li>
+      <a class="pagination-link">8</a>
+    </li>
+    <li><span class="pagination-ellipsis is-hidden-desktop">&hellip;</span></li>
+    <li>
+      <a class="pagination-link  is-hidden-mobile">9</a>
+    </li>
+    <li>
+      <a class="pagination-link  ">10</a>
+    </li>
+    
+  </ul>
+</nav>
                 </section>
                 <section class='section' style="">
                     <h1 class='title'>最受歡迎故事</h1>
