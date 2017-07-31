@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $storys = story::all()->toArray();
         $i = 0;
-        $latest_chapters =  $this->get_latest_chapters()->toArray();
+        $latest_chapters =  $this->get_latest_chapters();
        // return $latest_chapters;
         foreach ($storys as $story){
             $member = User::where('id',$story['member_id'])->take(1)->get();

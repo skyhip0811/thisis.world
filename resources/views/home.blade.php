@@ -41,6 +41,31 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    <b-table :data="chapters">
+                        <template scope="props">
+                            <b-table-column field="story.name" label="故事" sortable>
+                                @{{ props.row.story.name}}
+                            </b-table-column>
+                            <b-table-column field="name" label="章節" sortable>
+                                @{{ props.row.name}}
+                            </b-table-column>
+                            <b-table-column field="last_chapter.name" label="上一章節" sortable>
+                                <span v-if="props.row.last_chapter">props.row.last_chapter.name</span>
+                                <span v-else>--</span>
+                            </b-table-column>
+                            <b-table-column field="aurthor.name" label="作者" sortable>
+                                @{{ props.row.aurthor.name}}
+                            </b-table-column>
+                            <b-table-column field="created_at" label="作者" sortable>
+                                @{{ props.row.aurthor.name}}
+                            </b-table-column>
+
+
+                        </template>
+                        <div slot="empty" class="has-text-centered">
+                            沒有更新...
+                        </div>
+                    </b-table>
                     <b-pagination
                     :total="total"
                     :current.sync="current"
@@ -83,6 +108,7 @@
                 checkboxState: true,
                 navbarActive:false,
                 storys: {!! json_encode($data['storys']) !!},
+                chapters:{!! json_encode($data['chpaters']) !!},
                 swiperOption: {
               
               autoplay:5000,
@@ -92,7 +118,8 @@
             order:'',
             size:'',
             isSimple:false  ,
-            perPage:10
+            perPage:10,
+
             
             },
             methods:{
