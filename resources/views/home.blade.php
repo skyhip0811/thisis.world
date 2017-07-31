@@ -31,13 +31,14 @@
                                
                             </thead>
                             <tbody>
-                                
+                                @foreach ($data['chpaters'] as $chapter)
                                 <tr>
-                                    <td>123123}<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
-                                    <td>實驗室</td>
-                                    <td>筆現實</td>
-                                    <td class="is-hidden-mobile">2017-07-15</td>
+                                    <td>{{$chapter['story']['name']}}<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
+                                    <td>{{$chapter['last_chapter']['name']}} @if($chapter['last_chapter']['name']) > @else -- > @endif {{$chapter['name']}}</td>
+                                    <td>{{$chapter['aurthor']['name']}}</td>
+                                    <td class="is-hidden-mobile">{{$chapter['created_at']}}</td>
                                 </tr>   
+                                @endforeach
                             </tbody>
                         </table>
                     <b-pagination
@@ -53,7 +54,7 @@
                 <section class='section' style="">
                     <h1 class='title'>最受歡迎故事</h1>
                     <div class='columns  is-multiline'>
-                        @foreach ($storys as $story)
+                        @foreach ($data['storys'] as $story)
                         <storycard story_name='{{$story['name']}}' aurthor='{{$story['aurthor']}}' description='{{$story['description']}}' total_levels=12 total_chapters=1></storycard>
                         @endforeach
                     </div>
@@ -81,7 +82,7 @@
                 switchState: true,
                 checkboxState: true,
                 navbarActive:false,
-                storys: {!! json_encode($storys) !!},
+                storys: {!! json_encode($data['storys']) !!},
                 swiperOption: {
               
               autoplay:5000,

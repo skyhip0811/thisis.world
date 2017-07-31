@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\story;
 use App\User;
+use App\Chapter;
 
 class HomeController extends Controller
 {
@@ -27,11 +28,21 @@ class HomeController extends Controller
     {
         $storys = story::all()->toArray();
         $i = 0;
+        $latest_chapters =  $this->get_latest_chapters()->toArray();
+       // return $latest_chapters;
         foreach ($storys as $story){
             $member = User::where('id',$story['member_id'])->take(1)->get();
           
             $storys[$i]['aurthor'] = $member[0]->name;
         }
-        return view('home',compact('storys'));
+        
+        $data = ['storys' => $storys, 'chpaters'=>$latest_chapters];
+        return view('home',compact('data'));
+    }
+    
+    private function get_latest_chapters(){
+        $chapters = Chapter::with(['story','last_chapter','aurthor'])->take(20)->orderBy('created_at','desc')->get();
+        return $chapters;
+        
     }
 }
