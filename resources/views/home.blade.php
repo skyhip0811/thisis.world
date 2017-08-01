@@ -17,32 +17,14 @@
                 </section> 
                 <section class='section'>
                     <h1 class='title'>最新章節</h1>
-                        <table class='table'>
-                            <thead>
-                                
-                                <tr>
-                                    <th style="min-width:120px">
-                                        故事
-                                    </th>
-                                    <th>上一章節 > 章節</th>
-                                    <th style="min-width:80px">作者</th>
-                                    <th class="is-hidden-mobile">日期</th>
-                                </tr>
-                               
-                            </thead>
-                            <tbody>
-                                @foreach ($data['chpaters'] as $chapter)
-                                <tr>
-                                    <td>{{$chapter['story']['name']}}<span class="is-hidden-desktop" style="font-size: 9px"><br>2017-07-15</span></td>
-                                    <td>{{$chapter['last_chapter']['name']}} @if($chapter['last_chapter']['name']) > @else -- > @endif {{$chapter['name']}}</td>
-                                    <td>{{$chapter['aurthor']['name']}}</td>
-                                    <td class="is-hidden-mobile">{{$chapter['created_at']}}</td>
-                                </tr>   
-                                @endforeach
-                            </tbody>
-                        </table>
-                    <b-table :data="chapters">
-                        <template scope="props">
+
+                    <b-table :data="chapters"
+                        :paginated=true
+                        :per-page=5
+                        :pagination-simple=true
+                        default-sort="['created_at','desc']"
+                        v-on:click='test'>
+                        <template scope="props" >
                             <b-table-column field="story.name" label="故事" sortable>
                                 @{{ props.row.story.name}}
                             </b-table-column>
@@ -50,15 +32,18 @@
                                 @{{ props.row.name}}
                             </b-table-column>
                             <b-table-column field="last_chapter.name" label="上一章節" sortable>
-                                <span v-if="props.row.last_chapter">props.row.last_chapter.name</span>
+                                <span v-if="props.row.last_chapter">@{{props.row.last_chapter.name}}</span>
                                 <span v-else>--</span>
                             </b-table-column>
                             <b-table-column field="aurthor.name" label="作者" sortable>
                                 @{{ props.row.aurthor.name}}
                             </b-table-column>
-                            <b-table-column field="created_at" label="作者" sortable>
-                                @{{ props.row.aurthor.name}}
+                            <b-table-column field="created_at" label="創作日期" sortable>
+                                <span class="tag is-success">
+                                    @{{ new Date(props.row.created_at).toLocaleDateString() }}
+                                </span>
                             </b-table-column>
+
 
 
                         </template>
@@ -66,21 +51,14 @@
                             沒有更新...
                         </div>
                     </b-table>
-                    <b-pagination
-                    :total="total"
-                    :current.sync="current"
-                    :order="order"
-                    :size="size"
-                    :simple="isSimple"
-                    :per-page="perPage">
-                </b-pagination>
+ 
                 </section>
 
                 <section class='section' style="">
                     <h1 class='title'>最受歡迎故事</h1>
                     <div class='columns  is-multiline'>
                         @foreach ($data['storys'] as $story)
-                        <storycard story_name='{{$story['name']}}' aurthor='{{$story['aurthor']}}' description='{{$story['description']}}' total_levels=12 total_chapters=1></storycard>
+                        <storycard story_name='{{$story['name']}}' aurthor='{{$story['aurthor']}}' description='{{$story['description']}}' total_levels={{$story['max_level']}} total_chapters={{$story['chapter_count']}}></storycard>
                         @endforeach
                     </div>
                 </section>
@@ -125,7 +103,10 @@
             methods:{
               toggle_navbar:function(){
                   this.navbarActive = !this.navbarActive;
-              }  
+              },
+              test:function(e){
+                  console.log('go to '+e.name);
+              }
             }
         })
     </script>

@@ -30,3 +30,4 @@ Route::get('/static/register', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('story/{id}','StoryController@index');

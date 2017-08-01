@@ -17,6 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
        // $this->middleware('auth');
+         
     }
 
     /**
@@ -26,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $storys = story::all()->toArray();
+        $storys = story::take(20)->withCount('chapter')->get()->toArray();
+   
         $i = 0;
         $latest_chapters =  $this->get_latest_chapters();
        // return $latest_chapters;

@@ -27,4 +27,9 @@ class Chapter extends Model
     public function aurthor(){
         return $this->belongsTo('App\User', 'member_id');
     }
+    
+    public function getAurthorAttribute(){
+        return $this->aurthor()->getResults()->name;
+    }
+    protected $appends = ['aurthor'];
 }

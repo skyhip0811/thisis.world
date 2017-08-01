@@ -63,7 +63,7 @@
                                             {{ csrf_field() }}
                                         </form>
                     @endif
-                    <a class="navbar-item" href='../static/world'>
+                    <a class="nav-item" href='../static/world'>
                         聯絡我們
                     </a>
                   </div>
